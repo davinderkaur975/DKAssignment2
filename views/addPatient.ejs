@@ -1,0 +1,43 @@
+<% include partials/header %>
+
+
+<div class="container">
+        <form method="POST" action="/add">
+          <div class="row">
+            <div class="col-25">
+              <label for="dname">Doctor Name</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="dname" name="doctorname" >
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="pname">Patient Name</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="pname" name="patientname">
+            </div>
+          </div>
+          <div class="row">
+                <div class="col-25">
+                  <label for="age">Age</label>
+                </div>
+                <div class="col-75">
+                  <input type="text" id="age" name="age">
+                </div>
+              </div>
+              <div class="row">
+                    <div class="col-25">
+                      <label for="disease">Disease</label>
+                    </div>
+                    <div class="col-75">
+                      <input type="text" id="disease" name="disease">
+                    </div>
+                  </div>
+          <div class="row">
+            <input type="submit" value="Submit">
+          </div>
+        </form>
+      </div>
+      <% include partials/footer %>

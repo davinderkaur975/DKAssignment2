@@ -24,3 +24,17 @@ exports.register = (req, res, next) => {
       next(); /* success */
     });
   };
+
+  exports.loginForm = (req, res) => {
+    const messages = req.session.messages || [];
+  
+    // clear session message
+    req.session.messages = [];
+  
+    res.render('login', {
+      title: 'Login',
+      messages,
+      user: req.user,
+    });
+  };
+  

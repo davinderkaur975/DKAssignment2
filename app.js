@@ -28,6 +28,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(
   session({
     secret: 'some string value here',
@@ -41,6 +44,24 @@ app.use(passport.session());
 
 const User = require('./models/User');
 passport.use(User.createStrategy());
+
+const googleStrategy = require('passport-google-oauth').OAuth2Strategy;
+passport.use(
+  new googleStrategy(
+    {
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      callbackURL: process.env.GOOGLE_CALLBACK_URL
+    },
+    (request, accessToken, refreshToken, profile, done) => {
+      User.findOrCreate(
+        { username: profile.emails[0].value },
+        (err, user) => done(err, user)
+      );
+    }
+  )
+);
+
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
