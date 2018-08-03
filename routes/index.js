@@ -14,8 +14,8 @@ router.get('/', patientController.homePage);
 
 router.get('/doctor', patientController.doctor);
 
-router.get('/add', authController.isLoggedIn, gameController.addGame);
-router.post('/add', authController.isLoggedIn, gameController.createGame);
+router.get('/add', patientController.addPatient);
+router.post('/add', patientController.createPatient);
 
 router.get('/register', userController.registerForm);
 router.post('/register', userController.register);

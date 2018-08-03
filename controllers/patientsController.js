@@ -31,6 +31,23 @@ exports.homePage = (req, res) => {
     });
   };
 
+
+  exports.addPatient = (req, res) => {
+    res.render('addPatient', {
+      title: 'Add Patient',
+    });
+  };
+  
+  exports.createPatient = (req, res) => {
+    try {
+      const patient = new Patient(req.body);
+      patient.save();
+      res.redirect('/doctor');
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  
  
   
   
