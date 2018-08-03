@@ -2,13 +2,13 @@
 
 
 <div class="container">
-        <form method="POST" action="/add">
+        <form method="POST">
           <div class="row">
             <div class="col-25">
               <label for="doctorn">Doctor Name</label>
             </div>
             <div class="col-75">
-              <input type="text" id="doctorn" name="doctorn" >
+              <input type="text" id="doctorn" name="doctorn" value="<%= patient.doctorn %>" >
             </div>
           </div>
           <div class="row">
@@ -16,7 +16,7 @@
               <label for="patientn">Patient Name</label>
             </div>
             <div class="col-75">
-              <input type="text" id="patientn" name="patientn">
+              <input type="text" id="patientn" name="patientn" value="<%= patient.patientn %>" >
             </div>
           </div>
           <div class="row">
@@ -24,7 +24,7 @@
                   <label for="age">Age</label>
                 </div>
                 <div class="col-75">
-                  <input type="text" id="age" name="age">
+                  <input type="text" id="age" name="age" value="<%= patient.age %>" >
                 </div>
               </div>
               <div class="row">
@@ -32,11 +32,11 @@
                       <label for="disease">Disease</label>
                     </div>
                     <div class="col-75">
-                      <input type="text" id="disease" name="disease">
+                      <input type="text" id="disease" name="disease" value="<%= patient.disease %>" >
                     </div>
                   </div>
           <div class="row">
-            <button type="submit" >Add Patient</button>
+            <input type="submit" value="Submit">
           </div>
         </form>
       </div>

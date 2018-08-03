@@ -12,13 +12,18 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', patientController.homePage);
 
-router.get('/doctor', patientController.doctor);
+router.get('/patients', patientController.getPatients);
 
-router.get('/add', patientController.addPatient);
-router.post('/add', patientController.createPatient);
+router.get('/doctor', authController.isLoggedIn, patientController.doctor);
+router.get('/doctor/edit/:id', patientController.editPatient);
+router.post('/doctor/edit/:id', patientController.updatePatient);
+router.get('/doctor/delete/:id', patientController.deletePatient);
+
+router.get('/add', authController.isLoggedIn, patientController.addPatient);
+router.post('/add', authController.isLoggedIn, patientController.createPatient);
 
 router.get('/register', userController.registerForm);
-router.post('/register', userController.register);
+router.post('/register', userController.register, authController.login);
 
 router.get('/login', userController.loginForm);
 router.post('/login', authController.login);
