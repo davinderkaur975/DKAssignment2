@@ -28,6 +28,11 @@ router.post('/register', userController.register, authController.login);
 router.get('/login', userController.loginForm);
 router.post('/login', authController.login);
 
+router.get('/logout', (req, res) => {
+  req.logout();
+  res.redirect('/patients');
+});
+
 router.get('/google', authController.googlePre);
 router.get('/google/callback', authController.googlePost);
 

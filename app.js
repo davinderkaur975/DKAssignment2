@@ -8,11 +8,12 @@ const bodyParser = require('body-parser');
 
 const passport = require('passport');
 const session = require('express-session');
+const localStrategy = require('passport-local').Strategy;
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 
-var app = express();
+const app = express();
 
 const mongoose = require('mongoose');
 

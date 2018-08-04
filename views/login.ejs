@@ -1,11 +1,26 @@
 <% include partials/header %>
+
+<% if (messages.length > 0) { %>
+  <div class="row flex-spaces">
+      <div class="alert alert-danger">
+          <%= messages.toString() %>
+      </div>
+  </div>
+  <% } else { %>
+      <div class="row flex-spaces">
+          <div class="alert alert-secondary">
+              Please enter your credentials
+          </div>
+      </div>
+      <% } %>
+
 <div class="container">
         <h3>Log In</h3>
         
-        <form>
+        <form method="POST">
           <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+            <input id="username" type="text" class="form-control" name="username" placeholder="Email">
           </div>
           <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
