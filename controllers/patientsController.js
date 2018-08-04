@@ -1,10 +1,17 @@
+/* File name: patientsController.js
+     Author's name: Davinder Kaur
+     Website name: https://dkassignment2.herokuapp.com/
+     File Description: This file is rendering the view of all the pages. */
+
 const Patient = require('../models/Patient');
 const url = require('url');
 
+//It is rendering the view of homepage.
 exports.homePage = (req, res) => {
     res.render('index', { title: 'Home', user: req.user });
   };
 
+  //It is rendering the view of patients page.
   exports.getPatients = (req, res) => {
     Patient.find((err, patients) => {
       if (err) {
@@ -19,6 +26,8 @@ exports.homePage = (req, res) => {
     });
   };
 
+
+//It is rendering the view of doctor page.
   exports.doctor = (req, res) => {
     Patient.find((err, patients) => {
       if (err) {
@@ -34,7 +43,7 @@ exports.homePage = (req, res) => {
     });
   };
 
-
+//It is rendering the view of add new patient to the table page.
   exports.addPatient = (req, res) => {
     res.render('addPatient', {
       title: 'Add Patient',
@@ -52,6 +61,7 @@ exports.homePage = (req, res) => {
     }
   };
 
+  //It is rendering the view of edit page.
   exports.editPatient = (req, res) => {
     // use Game model to find selected document
     Patient.findById({ _id: req.params.id }, (err, patient) => {
@@ -80,6 +90,7 @@ exports.homePage = (req, res) => {
     });
   };
 
+  //It is rendering the view of delete.
   exports.deletePatient = (req, res) => {
     Patient.findByIdAndRemove(
       { _id: req.params.id },

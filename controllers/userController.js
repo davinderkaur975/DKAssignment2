@@ -1,3 +1,8 @@
+/* File name: userController.js
+     Author's name: Davinder Kaur
+     Website name: https://dkassignment2.herokuapp.com/
+     File Description: This file is responsible for registerimg the new user. */
+
 const passport = require('passport');
 const User = require('../models/User');
 

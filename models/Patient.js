@@ -1,7 +1,10 @@
+/* File name: Patient.js
+     Author's name: Davinder Kaur
+     Website name: https://dkassignment2.herokuapp.com/
+     File Description: This file is defines schema for patient model. */
+
 const mongoose = require('mongoose');
 
-// define a schema for the game model
-// this and all other models inherit from mongoose.Schema
 
 const patientSchema = new mongoose.Schema({
   doctorn: {

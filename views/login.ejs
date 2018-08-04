@@ -1,18 +1,19 @@
-<% include partials/header %>
+<!-- File name: login.ejs
+     Author's name: Davinder Kaur
+     Website name: https://dkassignment2.herokuapp.com/
+     File Description: This file contains the form for user to login. -->
 
-<% if (messages.length > 0) { %>
-  <div class="row flex-spaces">
-      <div class="alert alert-danger">
-          <%= messages.toString() %>
-      </div>
-  </div>
-  <% } else { %>
-      <div class="row flex-spaces">
-          <div class="alert alert-secondary">
-              Please enter your credentials
-          </div>
-      </div>
-      <% } %>
+<% include partials/header %>
+<style>
+    body  {
+        background-image: url("./images/pati.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+    }
+    </style>
+
 
 <div class="container">
         <h3>Log In</h3>

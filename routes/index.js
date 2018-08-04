@@ -1,3 +1,8 @@
+/* File name: index.ejs
+     Author's name: Davinder Kaur
+     Website name: https://dkassignment2.herokuapp.com/
+     File Description: This file has routes to get all the pages */
+
 var express = require('express');
 const patientController = require('../controllers/patientsController');
 const userController = require('../controllers/userController');
@@ -9,7 +14,7 @@ const passport = require('passport');
 var router = express.Router();
 
 
-/* GET home page. */
+/* GET all the pages. */
 router.get('/', patientController.homePage);
 
 router.get('/patients', patientController.getPatients);
